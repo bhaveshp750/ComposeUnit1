@@ -3,4 +3,5 @@
     <string name="happy_birthday_text">Happy Birthday Dada!</string>
     <string name="from_text">-from Bhavesh</string>
     <string name="title_activity_aritcle">AritcleActivity</string>
+    <string name="title_activity_business_card">BusinessCard</string>
 </resources>

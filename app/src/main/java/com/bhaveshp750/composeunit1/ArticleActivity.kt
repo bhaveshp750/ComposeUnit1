@@ -199,7 +199,7 @@ fun EachQuadrantLayout(
     }
 }
 
-@Preview(showBackground = true)
+//@Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     ComposeUnit1Theme {

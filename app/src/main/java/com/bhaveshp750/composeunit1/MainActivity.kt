@@ -74,33 +74,56 @@ fun BirthdayGreetingWithText(message: String, from: String) {
                 .wrapContentWidth(align = Alignment.CenterHorizontally)
                 .padding(start = 16.dp, end = 16.dp)
         )
-        Row(modifier = Modifier
-            .fillMaxWidth()
-            .wrapContentWidth(align = Alignment.CenterHorizontally)
-        ) {
-            val context = LocalContext.current
-            Button(onClick = {
-                val intent = Intent(context, ArticleActivity::class.java)
-                intent.putExtra("name", "Article")
-                context.startActivity(intent)
-            }, modifier = Modifier.padding(all = 4.dp)) {
-                Text(text = "Article")
-            }
-            Button(onClick = {
-                val intent = Intent(context, ArticleActivity::class.java)
-                intent.putExtra("name", "TaskManager")
-                context.startActivity(intent)
-            }, modifier = Modifier.padding(all = 4.dp)) {
-                Text(text = "TaskManager")
-            }
-            Button(onClick = {
-                val intent = Intent(context, ArticleActivity::class.java)
-                intent.putExtra("name", "Quadrant")
-                context.startActivity(intent)
-            }, modifier = Modifier.padding(all = 4.dp)) {
-                Text(text = "Quadrant")
-            }
+        Column(modifier = Modifier.fillMaxWidth()) {
+            MyActivities()
+            BusinessCardActivity()
 
+        }
+    }
+}
+
+@Composable
+fun BusinessCardActivity() {Row(modifier = Modifier
+    .fillMaxWidth()
+    .wrapContentWidth(align = Alignment.CenterHorizontally)
+) {
+    val context = LocalContext.current
+    Button(onClick = {
+        val intent = Intent(context, BusinessCard::class.java)
+        context.startActivity(intent)
+    }, modifier = Modifier.padding(all = 4.dp)) {
+        Text(text = "Business Card")
+    }
+}
+}
+
+@Composable
+fun MyActivities() {
+    Row(modifier = Modifier
+        .fillMaxWidth()
+        .wrapContentWidth(align = Alignment.CenterHorizontally)
+    ) {
+        val context = LocalContext.current
+        Button(onClick = {
+            val intent = Intent(context, ArticleActivity::class.java)
+            intent.putExtra("name", "Article")
+            context.startActivity(intent)
+        }, modifier = Modifier.padding(all = 4.dp)) {
+            Text(text = "Article")
+        }
+        Button(onClick = {
+            val intent = Intent(context, ArticleActivity::class.java)
+            intent.putExtra("name", "TaskManager")
+            context.startActivity(intent)
+        }, modifier = Modifier.padding(all = 4.dp)) {
+            Text(text = "TaskManager")
+        }
+        Button(onClick = {
+            val intent = Intent(context, ArticleActivity::class.java)
+            intent.putExtra("name", "Quadrant")
+            context.startActivity(intent)
+        }, modifier = Modifier.padding(all = 4.dp)) {
+            Text(text = "Quadrant")
         }
     }
 }
